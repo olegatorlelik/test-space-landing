@@ -1,0 +1,109 @@
+@import "src/assets/styles/utils/mixins";
+@import "src/assets/styles/utils/vars";
+
+.navigation {
+  display: flex;
+  justify-self: flex-end;
+
+  .links {
+    justify-self: flex-end;
+    display: flex;
+    gap: 32px;
+    transition: all 0.5s ease-in-out;
+
+    @include media-breakpoint-down(sm) {
+      transform: translateX(500%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: $black;
+    }
+
+    .bin {
+      display: inline-block;
+      position: relative;
+      width: 25px;
+      height: 21px;
+    }
+
+    .bin svg {
+      width: 100%;
+      height: 100%;
+      transition: fill 0.3s ease-in;
+    }
+
+    .bin .default-path {
+      fill: white;
+    }
+
+    .bin:hover .default-path {
+      fill: none;
+    }
+
+    .bin .gradient-path {
+      fill: url(#gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease-in;
+    }
+
+    .bin:hover .gradient-path {
+      opacity: 1;
+    }
+
+    .bin:hover .default-path {
+      opacity: 0;
+    }
+
+    .link-wrapper {
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+
+      &:before {
+        font-size: 18px;
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #EBFF00, #FF70D9);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        transition: opacity .3s ease-in-out;
+        z-index: 1;
+        opacity: 0;
+      }
+
+      &:hover:before {
+        opacity: 1;
+      }
+    }
+
+    .link {
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color .3s ease-in-out;
+      position: relative;
+      @include font-params(18px, 700, $white, 21.6px);
+    }
+  }
+
+  &:has(input[type='checkbox']:checked) {
+    .links {
+      transform: translateX(0);
+    }
+  }
+}
+

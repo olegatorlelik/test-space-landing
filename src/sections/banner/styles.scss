@@ -1,0 +1,105 @@
+@import 'src/assets/styles/utils/mixins';
+@import 'src/assets/styles/utils/vars';
+
+.banner {
+  height: 490px;
+  position: relative;
+
+  &:before {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(15, 20, 32, 0.79));
+  }
+
+  @include media-breakpoint-down(xl) {
+    height: 420px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 451px;
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(-50%);
+  }
+
+  .wrapper {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 693px 1fr;
+    align-items: center;
+    @include container();
+
+    @include media-breakpoint-down(xl) {
+      grid-template-columns: 411px 1fr;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 22px;
+
+      @include media-breakpoint-down(sm) {
+        align-items: center;
+        grid-row: 2/3;
+      }
+
+      .title {
+        @include font-params(72px, 800, $white, 72px);
+
+        span {
+          color: $rose;
+        }
+
+        @include media-breakpoint-down(xl) {
+          @include font-params(48px, 800, $white, 48px);
+        }
+
+        @include media-breakpoint-down(sm) {
+          text-align: center;
+          @include font-params(36px, 800, $white, 36px);
+        }
+      }
+
+      .description {
+        @include font-params(32px, 800, $white, 38.4px);
+
+        span {
+          color: $yellow;
+        }
+
+        @include media-breakpoint-down(xl) {
+          @include font-params(22px, 800, $white, 26.4px);
+        }
+
+        @include media-breakpoint-down(sm) {
+          text-align: center;
+          @include font-params(16px, 800, $white, 19.2px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import 'src/assets/styles/utils/mixins';
+@import 'src/assets/styles/utils/vars';
+
+.offers {
+  padding: 80px 0;
+  background-color: $oxford-blue;
+
+  @include media-breakpoint-down(xl) {
+    padding: 40px 0;
+  }
+
+  .wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+    column-gap: 40px;
+    @include container();
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+      column-gap: 20px;
+    }
+  }
+
+  h3 {
+    grid-column: 1/3;
+    @include font-params(32px, 800, $white);
+
+    @include media-breakpoint-down(xl) {
+      font-size: 24px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      grid-column: 1/2;
+      font-size: 18px;
+    }
+  }
+}

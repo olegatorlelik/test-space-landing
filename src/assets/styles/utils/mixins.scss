@@ -1,0 +1,31 @@
+@import "media-query";
+
+/**
+  General mixing for font params
+ */
+@mixin font-params($font-size, $font-weight: false, $color: false, $line-height: false) {
+  font-size: $font-size;
+
+  @if ($font-weight) {
+    font-weight: $font-weight;
+  }
+
+  @if ($color) {
+    color: $color;
+  }
+
+  @if ($line-height) {
+    line-height: $line-height;
+  }
+}
+
+@mixin container() {
+  width: 100%;
+  max-width: 1248px;
+  margin: 0 auto;
+  padding: 0 81.5px;
+
+  @include media-breakpoint-down(xl) {
+    padding: 0 24px;
+  }
+}

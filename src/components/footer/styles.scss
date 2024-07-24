@@ -1,0 +1,15 @@
+@import "src/assets/styles/utils/mixins";
+@import "src/assets/styles/utils/vars";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-area: footer;
+  @include container();
+
+  p {
+    @include font-params(18px, 800, $yellow, 28px);
+  }
+}

@@ -1,0 +1,109 @@
+@import 'src/assets/styles/utils/mixins';
+@import 'src/assets/styles/utils/vars';
+
+.card {
+  position: relative;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+
+  @include media-breakpoint-down(xl) {
+    padding: 20px;
+    height: 339px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: 320px;
+  }
+
+  &:before {
+    border-radius: 10px;
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(15, 20, 32, 0.79));
+  }
+
+  img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: flex-end;
+    gap: 22px;
+    max-width: 425px;
+    height: 100%;
+
+    .title {
+      @include font-params(46px, 800, $white, 46px);
+
+      @include media-breakpoint-down(xl) {
+        max-width: 281px;
+        @include font-params(40px, 800, $white, 40px);
+      }
+    }
+
+    .description {
+      @include font-params(28px, 800, $white);
+
+      @include media-breakpoint-down(xl) {
+        @include font-params(16px, 800, $white);
+      }
+    }
+
+    button {
+      align-self: flex-end;
+      justify-self: flex-start;
+    }
+  }
+
+  &[data-full-size=true] {
+    grid-column: 1/3;
+
+    @include media-breakpoint-down(xl) {
+      grid-column: auto;
+    }
+
+    .content {
+      max-width: 635px;
+
+      @include media-breakpoint-down(xl) {
+        max-width: 281px;
+      }
+
+      .title {
+        font-size: 74px;
+        line-height: 74px;
+
+        @include media-breakpoint-down(xl) {
+          @include font-params(40px, 800, $white, 40px);
+        }
+      }
+
+      .description {
+        font-size: 24px;
+
+        @include media-breakpoint-down(xl) {
+          @include font-params(16px, 800, $white);
+        }
+      }
+    }
+  }
+}

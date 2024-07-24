@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/test-space-landing/static/css/main.31b91423.css",
+    "main.js": "/test-space-landing/static/js/main.b4674238.js",
+    "static/media/banner.png": "/test-space-landing/static/media/banner.df195b51f71ba6a3f7e5.png",
+    "static/media/background-3.png": "/test-space-landing/static/media/background-3.fda5a622d5edb1aa1cd2.png",
+    "static/media/background-1.png": "/test-space-landing/static/media/background-1.69c8007cfc68cbbb8978.png",
+    "static/media/background-2.png": "/test-space-landing/static/media/background-2.23cbc7578512a30657d3.png",
+    "static/media/rocket.svg": "/test-space-landing/static/media/rocket.a4389852c90b9d43571cac86eea0e8ab.svg",
+    "static/media/Lato-Bold.ttf": "/test-space-landing/static/media/Lato-Bold.0baf4e4829ca0a3e1e5c.ttf",
+    "static/media/background-4.png": "/test-space-landing/static/media/background-4.0dabc64aadb42ce30a98.png",
+    "static/media/Lato-ExtraBold.ttf": "/test-space-landing/static/media/Lato-ExtraBold.0d13f4b5f45c14cf4d3c.ttf",
+    "static/media/earth.png": "/test-space-landing/static/media/earth.13122a88ba7239e86722.png",
+    "static/media/logo.svg": "/test-space-landing/static/media/logo.f4153131d3955bdfa609912a9f3b5caf.svg",
+    "static/media/bin.svg": "/test-space-landing/static/media/bin.5d493ed4b6b358af9a98203b48c8dc63.svg",
+    "index.html": "/test-space-landing/index.html",
+    "main.31b91423.css.map": "/test-space-landing/static/css/main.31b91423.css.map",
+    "main.b4674238.js.map": "/test-space-landing/static/js/main.b4674238.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31b91423.css",
+    "static/js/main.b4674238.js"
+  ]
+}
